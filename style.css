@@ -1,0 +1,431 @@
+:root {
+    --dark-gray: hsl(0, 0%, 63%);
+    --black: hwb(0 0% 100%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+    --font-size: 12px;
+}
+@font-face {
+    font-family: 'League Spartan';
+    src: url('./fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf');
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    width: 100dvw;
+    display: grid;
+    font-family: 'League Spartan';
+}
+
+main {
+    height: 100dvh;
+    width: 100dvw;
+    display: grid;
+    grid-template-areas:
+        "one one one one one one one two two two two two"
+        "three three three four four four four four four five five five";
+    grid-template-rows: 70dvh 30dvh;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+section[class="one"] {
+    grid-area: one;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+img[id="image-hero-1"],
+img[id="image-hero-2"],
+img[id="image-hero-3"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    display: grid;
+}
+
+img[id="image-hero-2"],
+img[id="image-hero-3"] {
+    display: none;
+}
+
+img[id="image-about-dark"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+img[id="image-about-large"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+input[id="info-1"],
+input[id="info-3"],
+input[id="info-5"] {
+    background-image: url("./images/icon-angle-left.svg");
+    appearance: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+input[id="info-2"],
+input[id="info-4"],
+input[id="info-6"] {
+    background-image: url("./images/icon-angle-right.svg");
+    appearance: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+main:has(input[id="info-2"]:checked) section[class="two"] article:not(article[class="available"]),
+main:has(input[id="info-5"]:checked) section[class="two"] article:not(article[class="available"]),
+main:has(input[id="info-2"]:checked) section[class="one"] img:not(img[id="image-hero-2"]):not(img[id="logo"]):not(img[class="menu-img"]):not([id="menu-close-img"]),
+main:has(input[id="info-5"]:checked) section[class="one"] img:not(img[id="image-hero-2"]):not(img[id="logo"]):not(img[class="menu-img"]):not([id="menu-close-img"]) {
+    display: none;
+}
+
+main:has(input[id="info-2"]:checked) article[class="available"],
+main:has(input[id="info-5"]:checked) article[class="available"],
+main:has(input[id="info-2"]:checked) img[id="image-hero-2"],
+main:has(input[id="info-5"]:checked) img[id="image-hero-2"] {
+    display: grid;
+}
+
+main:has(input[id="info-2"]:checked) nav[class="back-forward-1"],
+main:has(input[id="info-5"]:checked) nav[class="back-forward-1"] {
+    display: grid;
+}
+
+main:has(input[id="info-2"]:checked) nav:not([class="back-forward-1"]):not([id="mobile-nav"]):not([id="desktop-nav"]):not([id="mobile-nav-open"]),
+main:has(input[id="info-5"]:checked) nav:not([class="back-forward-1"]):not([id="mobile-nav"]):not([id="desktop-nav"]):not([id="mobile-nav-open"]) {
+    display: none;
+}
+
+
+
+main:has(input[id="info-3"]:checked) section[class="two"] article:not(article[class="discover"]),
+main:has(input[id="info-6"]:checked) section[class="two"] article:not(article[class="discover"]),
+main:has(input[id="info-3"]:checked) section[class="one"] img:not(img[id="image-hero-1"]):not(img[id="logo"]):not(img[class="menu-img"]):not([id="menu-close-img"]),
+main:has(input[id="info-6"]:checked) section[class="one"] img:not(img[id="image-hero-1"]):not(img[id="logo"]):not(img[class="menu-img"]):not([id="menu-close-img"]) {
+    display: none;
+}
+
+main:has(input[id="info-3"]:checked) article[class="discover"],
+main:has(input[id="info-6"]:checked) article[class="discover"],
+main:has(input[id="info-3"]:checked) img[id="image-hero-1"],
+main:has(input[id="info-6"]:checked) img[id="image-hero-1"] {
+    display: grid;
+}
+
+main:has(input[id="info-3"]:checked) nav[class="back-forward"],
+main:has(input[id="info-6"]:checked) nav[class="back-forward"] {
+    display: grid;
+}
+
+main:has(input[id="info-3"]:checked) nav:not([class="back-forward"]):not([id="mobile-nav"]):not([id="desktop-nav"]):not([id="mobile-nav-open"]),
+main:has(input[id="info-6"]:checked) nav:not([class="back-forward"]):not([id="mobile-nav"]):not([id="desktop-nav"]):not([id="mobile-nav-open"]) {
+    display: none;
+}
+
+
+
+main:has(input[id="info-4"]:checked) section[class="two"] article:not(article[class="manufactured"]),
+main:has(input[id="info-1"]:checked) section[class="two"] article:not(article[class="manufactured"]),
+main:has(input[id="info-4"]:checked) section[class="one"] img:not(img[id="image-hero-3"]):not(img[id="logo"]):not(img[class="menu-img"]):not([id="menu-close-img"]),
+main:has(input[id="info-1"]:checked) section[class="one"] img:not(img[id="image-hero-3"]):not(img[id="logo"]):not(img[class="menu-img"]):not([id="menu-close-img"]) {
+    display: none;
+}
+
+main:has(input[id="info-4"]:checked) article[class="manufactured"],
+main:has(input[id="info-1"]:checked) article[class="manufactured"],
+main:has(input[id="info-4"]:checked) img[id="image-hero-3"],
+main:has(input[id="info-1"]:checked) img[id="image-hero-3"] {
+    display: grid;
+}
+
+main:has(input[id="info-4"]:checked) nav[class="back-forward-2"],
+main:has(input[id="info-1"]:checked) nav[class="back-forward-2"] {
+    display: grid;
+}
+
+main:has(input[id="info-4"]:checked) nav:not([class="back-forward-2"]):not([id="mobile-nav"]):not([id="desktop-nav"]):not([id="mobile-nav-open"]),
+main:has(input[id="info-1"]:checked) nav:not([class="back-forward-2"]):not([id="mobile-nav"]):not([id="desktop-nav"]):not([id="mobile-nav-open"]) {
+    display: none;
+}
+
+
+section[class="one"] nav[id="desktop-nav"] {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-content: center;
+    top: 50px;
+}
+
+section[class="one"] nav img {
+    height: 50px;
+    object-fit: scale-down;
+}
+
+section[class="one"] nav menu {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    cursor: pointer;
+    color: white;
+}
+
+span[class="shop-now"] {
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+section[class="two"] {
+    grid-area: two;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+article[class="discover"],
+article[class="available"],
+article[class="manufactured"] {
+    display: grid;
+    height: 60%;
+    width: 60%;
+}
+
+article[class="available"],
+article[class="manufactured"] {
+    display: none;
+}
+
+article[class="discover"] header,
+article[class="available"] header,
+article[class="manufactured"] header {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+nav[class="back-forward-1"],
+nav[class="back-forward-2"] {
+    display: none;
+}
+
+nav[class="back-forward"],
+nav[class="back-forward-1"],
+nav[class="back-forward-2"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    height: 10dvh;
+    width: 10dvw;
+    grid-template-columns: 1fr 1fr;
+    background: var(--black);
+    cursor: pointer;
+}
+
+nav[class="back-forward"] input,
+nav[class="back-forward-1"] input,
+nav[class="back-forward-2"] input {
+    height: 5dvh;
+    width: 2dvh;
+}
+
+section[class="three"] {
+    grid-area: three;
+    position: relative;
+}
+
+section[class="four"] {
+    grid-area: four;
+    display: grid;
+    place-items: center;
+}
+
+article[class="about"] {
+    width: 80%;
+    height: 60%;
+}
+
+article[class="about"] header {
+    font-size: larger;
+    font-weight: bold;
+}
+
+
+section[class="five"] {
+    grid-area: five;
+    position: relative;
+}
+
+span[class="left"],
+span[class="right"] {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+span[class="left"]:hover,
+span[class="right"]:hover {
+    background: var(--dark-gray);
+}
+
+section[class="one"] nav[class="back-forward"],
+section[class="one"] nav[class="back-forward-1"],
+section[class="one"] nav[class="back-forward-2"] {
+    z-index: 0;
+    visibility: hidden;
+}
+
+nav[id="mobile-nav"],
+input[id="mobile-menu-toggle-open"],
+input[id="mobile-menu-toggle-close"] {
+    display: none;
+}
+li{
+    list-style-type: none;
+}
+section[class="zero"]{
+ display: none;
+}
+/* div{
+   display: contents;
+} */
+div[class="attribution"] {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    right: 50%;
+    display: flex;
+    gap: 2px;
+}
+@media (width<1300px) {
+    main {
+        height: 100dvh;
+        width: 100dvw;
+        display: grid;
+        grid-template-areas:
+            "zero"
+            "one"
+            "two"
+            "three"
+            "four"
+            "five";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 40dvh 40dvh 20dvh 40dvh 20dvh;
+    }
+
+    section[class="one"] nav[id="desktop-nav"] {
+        display: none;
+    }
+    section[class="zero"]{
+        grid-area: zero;
+        height: 0dvh;
+    }
+    nav[id="mobile-nav-open"] {
+        display: flex;
+        place-items: center
+    }
+
+    section[class="two"] nav[class="back-forward"],
+    section[class="two"] nav[class="back-forward-1"],
+    section[class="two"] nav[class="back-forward-2"] {
+        display: none;
+        z-index: 0;
+        visibility: hidden;
+    }
+
+    section[class="one"] nav[class="back-forward"],
+    section[class="one"] nav[class="back-forward-1"],
+    section[class="one"] nav[class="back-forward-2"] {
+        visibility: visible;
+        display: grid;
+        z-index: 1;
+    }
+
+    nav[class="back-forward"],
+    nav[class="back-forward-1"],
+    nav[class="back-forward-2"] {
+        position: absolute;
+        left: unset;
+        right: 0;
+        height: 10dvh;
+        width: 30dvw;
+        grid-template-columns: 1fr 1fr;
+        background: var(--black);
+        cursor: pointer;
+    }
+
+    article[class="discover"],
+    article[class="available"],
+    article[class="manufactured"] {
+        display: grid;
+        height: 80%;
+        width: 80%;
+    }
+
+    article[class="discover"] header,
+    article[class="available"] header,
+    article[class="manufactured"] header {
+        font-weight: bold;
+        font-size: x-large;
+    }
+
+    nav[id="mobile-nav"] {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        z-index: 1;
+    }
+
+    main:has(input[id="mobile-menu-toggle-open"]:checked) section[class="zero"] {
+        display: grid;
+     place-items: center;
+     height: 20dvh;
+    }
+    main:has(input[id="mobile-menu-toggle-open"]:checked) section:not([class="zero"]) {
+        filter: brightness(40%);  
+        backdrop-filter: brightness(80%);
+    }
+
+    nav[id="mobile-nav-open"] menu {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+    }
+    main:has(input[id="mobile-menu-toggle-open"]:checked) nav[id="mobile-nav"] {
+
+        display: none;
+    }
+
+    main:has(input[id="mobile-menu-toggle-close"]:checked) nav[id="mobile-nav"] {
+        display: grid;
+        z-index: 1;
+    }
+
+    main:has(input[id="mobile-menu-toggle-close"]:checked) section[class="zero"] {
+        display: none;
+    }
+    div[class="attribution"]{
+        display: flex;
+        justify-content: center;
+        position: unset;
+    }
+    
+}
