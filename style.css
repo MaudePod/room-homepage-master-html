@@ -306,9 +306,7 @@ li{
 section[class="zero"]{
  display: none;
 }
-/* div{
-   display: contents;
-} */
+
 div[class="attribution"] {
     position: absolute;
     bottom: 0;
